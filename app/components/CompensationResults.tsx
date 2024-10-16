@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import React from 'react';
 
@@ -9,32 +9,40 @@ interface Props {
 
 const CompensationResults: React.FC<Props> = ({ inputs, performance }) => {
     const calculateResults = () => {
-        // Extract input values
-        const {
-            fixedSalary,
-            variablePerMeeting,
-            boosterAmount,
-            accelerator,
-            decelerator,
-            averageSalePrice,
-            monthlyTargetMeetings,
-            closingRate,
-        } = inputs;
+        // Convert input values to numbers
+        const fixedSalary = Number(inputs.fixedSalary);
+        const variablePerMeeting = Number(inputs.variablePerMeeting);
+        const boosterAmount = Number(inputs.boosterAmount);
+        const accelerator = Number(inputs.accelerator);
+        const decelerator = Number(inputs.decelerator);
+        const averageSalePrice = Number(inputs.averageSalePrice);
+        const monthlyTargetMeetings = Number(inputs.monthlyTargetMeetings);
+        const closingRate = Number(inputs.closingRate);
+        const meetingsHeld = Number(performance.meetingsHeld);
 
-        const { meetingsHeld } = performance;
+        // Calculate sales made
         const salesMade = (meetingsHeld * closingRate) / 100;
+
+        // Variable compensation
         let variableComp = meetingsHeld * variablePerMeeting;
 
         // Apply decelerator if below target
-        if (meetingsHeld < monthlyTargetMeetings) 
+        if (meetingsHeld < monthlyTargetMeetings) {
             variableComp -= (variableComp * decelerator) / 100;
+        }
 
         // Apply accelerator if above 1.5 times target
-        if (meetingsHeld > 1.5 * monthlyTargetMeetings) 
+        if (meetingsHeld > 1.5 * monthlyTargetMeetings) {
             variableComp += (variableComp * accelerator) / 100;
+        }
 
+        // Boosters
         const boosters = Math.floor(salesMade / 10) * boosterAmount;
+
+        // Total compensation
         const totalComp = fixedSalary + variableComp + boosters;
+
+        // Revenue generated
         const revenueGenerated = salesMade * averageSalePrice;
 
         return {

@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import React from 'react';
 
@@ -13,26 +13,48 @@ const PerformanceSliders: React.FC<Props> = ({ performance, setPerformance }) =>
         const { name, value } = e.target;
         setPerformance((prevPerformance: any) => ({
             ...prevPerformance,
-            [name]: value,
+            [name]: Number(value),
         }));
     };
 
     return (
-        <div className="space-y-4">
-            <div>
-                <label className="block text-gray-700">RDV Réalisés:</label>
-                <input
-                    type="range"
-                    min="0"
-                    max="50"
-                    name="meetingsHeld"
-                    value={performance.meetingsHeld}
-                    onChange={handleSliderChange}
-                    className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
-                />
-                <span>{performance.meetingsHeld}</span>
+        <div className='space-y-2'>
+            <h2 className="text-2xl font-bold">Performance du commercial :</h2>
+            <div className="grid grid-cols-2 gap-4">
+                <div>
+                    <div className='flex flex-row justify-between'>
+                        <label className="block text-white-700">RDV réalisés:</label>
+                        <p className='flex-grow text-center'>{performance.meetingsHeld}</p>
+                    </div>
+                    <input
+                        type="range"
+                        min="15"
+                        max="30"
+                        step="5"
+                        name="meetingsHeld"
+                        value={performance.meetingsHeld}
+                        onChange={handleSliderChange}
+                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    />
+                </div>
+
+                <div>
+                    <div className='flex flex-row justify-between'>
+                        <label className="block text-white-700">Ventes réalisées:</label>
+                        <p className='flex-grow text-center'>{performance.salesMade}</p>
+                    </div>
+                    <input
+                        type="range"
+                        min="3.75"
+                        max="7.5"
+                        step="1.25"
+                        name="salesMade"
+                        value={performance.salesMade}
+                        onChange={handleSliderChange}
+                        className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
+                    />
+                </div>
             </div>
-            {/* Add other sliders similarly */}
         </div>
     );
 };

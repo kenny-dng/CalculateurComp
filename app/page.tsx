@@ -1,13 +1,14 @@
-'use client'; 
+'use client';
 
-import Head from 'next/head';
 import CompensationForm from './components/CompensationForm';
 import PerformanceSliders from './components/PerformanceSliders';
 import CompensationResults from './components/CompensationResults';
 import { useState } from 'react';
+import { InputProps, PerformanceProps } from './types';
 
 export default function Home() {
-  const [inputs, setInputs] = useState({
+  // Initialiser l'état avec les types définis
+  const [inputs, setInputs] = useState<InputProps>({
     fixedSalary: 1000,
     variablePerMeeting: 20,
     boosterAmount: 50,
@@ -18,29 +19,25 @@ export default function Home() {
     closingRate: 25,
   });
 
-  const [performance, setPerformance] = useState({
+  const [performance, setPerformance] = useState<PerformanceProps>({
     meetingsHeld: 20,
+    salesMade: 20,
   });
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-2">
-      <Head>
-        <title>Calculateur de Compensation Commercial</title>
-      </Head>
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Calculateur de Compensation
-        </h1>
-        <div className="mt-8">
+    <div className="items-center justify-center px-4 py-4">
+      <h1 className="text-4xl font-bold mb-4">Calculateur de compensation commerciale</h1>
+
+      <div className='min-w-min flex flex-wrap'>
+        <div className="flex flex-col justify-center border-2 border-white rounded-lg space-y-4 p-4">
           <CompensationForm inputs={inputs} setInputs={setInputs} />
-        </div>
-        <div className="mt-8">
           <PerformanceSliders performance={performance} setPerformance={setPerformance} />
         </div>
-        <div className="mt-8">
+
+        <div className="mt-4">
           <CompensationResults inputs={inputs} performance={performance} />
         </div>
-      </main>
+      </div>
     </div>
   );
 }
