@@ -68,9 +68,13 @@ const ResultView: React.FC<Props> = ({ inputs, performance }) => {
     };
 
     return (
-        <div className="flex flex-row">
-            <SummaryTab result={generateResult()} />
-            <AreaChartView data={generateData()} />
+        <div className="flex flex-wrap justify-between">
+            <div className="w-full md:w-1/4 p-2">
+                <SummaryTab result={generateResult()} />
+            </div>
+            <div className="w-full md:w-3/4 p-2">
+                <AreaChartView data={generateData()} />
+            </div>
         </div>
     );
 }

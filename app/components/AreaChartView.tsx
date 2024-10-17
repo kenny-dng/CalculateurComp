@@ -28,8 +28,8 @@ const CustomTooltip: React.FC<TooltipProps<number, string>> = ({ active, payload
 
 const AreaChartView: React.FC<Props> = ({ data }) => {
     return (
-        <ResponsiveContainer width="100%" height={400}>
-            <AreaChart data={data} margin={{top: 10,right: 30,left: 0,bottom: 0,}}>
+        <ResponsiveContainer width="100%" height={350}>
+            <AreaChart data={data} margin={{top: 10,right: 0,left: 0,bottom: 0,}}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="rdv" />
                 <YAxis />
