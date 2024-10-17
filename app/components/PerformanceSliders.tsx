@@ -29,7 +29,7 @@ const PerformanceSliders: React.FC<Props> = ({ performance, setPerformance }) =>
                     <input
                         type="range"
                         min="0"
-                        max="50"
+                        max="100"
                         step="5"
                         name="meetingsHeld"
                         value={performance.meetingsHeld}

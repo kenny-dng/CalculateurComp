@@ -521,6 +521,9 @@ video {
 [hidden]:where(:not([hidden="until-found"])) {
   display: none;
 }
+.static {
+  position: static;
+}
 .mt-1 {
   margin-top: 0.25rem;
 }

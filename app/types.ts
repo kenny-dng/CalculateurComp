@@ -13,3 +13,9 @@ export interface PerformanceProps {
     meetingsHeld: number;
     soldPerBoost: number;
 }
+
+export interface DataPoint {
+    rdv: number;
+    cost: number;
+    revenue: number;
+}
