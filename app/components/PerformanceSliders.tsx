@@ -18,8 +18,8 @@ const PerformanceSliders: React.FC<Props> = ({ performance, setPerformance }) =>
     };
 
     return (
-        <div className='space-y-2'>
-            <h2 className="text-2xl font-bold">Performance du commercial :</h2>
+        <div className=''>
+            <h2 className="text-xl font-bold">Performance du commercial :</h2>
             <div className="grid grid-cols-2 gap-4">
                 <div>
                     <div className='flex flex-row justify-between'>
@@ -28,8 +28,8 @@ const PerformanceSliders: React.FC<Props> = ({ performance, setPerformance }) =>
                     </div>
                     <input
                         type="range"
-                        min="15"
-                        max="30"
+                        min="0"
+                        max="50"
                         step="5"
                         name="meetingsHeld"
                         value={performance.meetingsHeld}
@@ -40,16 +40,16 @@ const PerformanceSliders: React.FC<Props> = ({ performance, setPerformance }) =>
 
                 <div>
                     <div className='flex flex-row justify-between'>
-                        <label className="block text-white-700">Ventes réalisées:</label>
-                        <p className='flex-grow text-center'>{performance.salesMade}</p>
+                        <label className="block text-white-700">Palier de vente (booster):</label>
+                        <p className='flex-grow text-center'>{performance.soldPerBoost}</p>
                     </div>
                     <input
                         type="range"
-                        min="3.75"
-                        max="7.5"
-                        step="1.25"
-                        name="salesMade"
-                        value={performance.salesMade}
+                        min="1"
+                        max="10"
+                        step="1"
+                        name="soldPerBoost"
+                        value={performance.soldPerBoost}
                         onChange={handleSliderChange}
                         className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
                     />

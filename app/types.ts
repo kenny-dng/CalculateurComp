@@ -11,5 +11,5 @@ export interface InputProps {
 
 export interface PerformanceProps {
     meetingsHeld: number;
-    salesMade: number;
+    soldPerBoost: number;
 }
