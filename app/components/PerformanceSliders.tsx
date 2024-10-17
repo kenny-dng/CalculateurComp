@@ -1,17 +1,18 @@
 'use client';
 
 import React from 'react';
+import { PerformanceProps } from '../types';
 
 interface Props {
-    performance: any;
-    setPerformance: any;
+    performance: PerformanceProps;
+    setPerformance: React.Dispatch<React.SetStateAction<PerformanceProps>>;
 }
 
 const PerformanceSliders: React.FC<Props> = ({ performance, setPerformance }) => {
 
     const handleSliderChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setPerformance((prevPerformance: any) => ({
+        setPerformance((prevPerformance) => ({
             ...prevPerformance,
             [name]: Number(value),
         }));

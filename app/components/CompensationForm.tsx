@@ -13,7 +13,7 @@ const CompensationForm: React.FC<Props> = ({ inputs, setInputs }) => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setInputs((prevInputs: any) => ({
+        setInputs((prevInputs) => ({
             ...prevInputs,
             [name]: Number(value),
         }));

@@ -1,10 +1,11 @@
 'use client';
 
 import React from 'react';
+import { InputProps, PerformanceProps } from '../types';
 
 interface Props {
-    inputs: any;
-    performance: any;
+    inputs: InputProps;
+    performance: PerformanceProps;
 }
 
 const CompensationResults: React.FC<Props> = ({ inputs, performance }) => {
