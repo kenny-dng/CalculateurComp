@@ -32,7 +32,6 @@ L'application permet aux utilisateurs d'entrer des paramètres de rémunération
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Vercel](https://vercel.com/) (pour le déploiement)
 
 
 ## Getting Started
