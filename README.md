@@ -16,7 +16,10 @@ Ce projet est une application web créée à l'aide de **React**, **TypeScript**
 
 ## Aperçu
 
-L'application permet aux utilisateurs d'entrer des paramètres de rémunération tels que le salaire fixe, la rémunération variable, les boosters, et les accélérateurs. Ensuite, ils peuvent ajuster leurs performances à l'aide de sliders pour voir comment ces performances affectent leur rémunération totale.
+L'application permet aux utilisateurs d'entrer des paramètres de rémunération tels que le salaire fixe, la rémunération variable, les boosters, et les accélérateurs/décelérateurs.
+Ensuite, ils peuvent ajuster les performances à l'aide de sliders pour voir comment ces performances affectent la rémunération totale : 
+
+![apercu](./apercu.png)
 
 ## Fonctionnalités
 
